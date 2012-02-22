@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install PUBLIC "-//Joomla! 1.6//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/1.6/template-install.dtd">
+<extension version="1.6" type="template" client="site">
+	<name>base</name>
+	<creationDate>February 2012</creationDate>
+	<author>Danny Nimmo</author>
+	<authorEmail>danny@dannynimmo.co.nz</authorEmail>
+	<authorUrl>http://www.dannynimmo.co.nz/</authorUrl>
+	<version>1.2</version>
+	<files>
+		<folder>css</folder>
+		<folder>html</folder>
+		<folder>images</folder>
+		<folder>javascript</folder>
+		<filename>index.php</filename>
+		<filename>templateDetails.xml</filename>
+		<filename>template_preview.png</filename>
+		<filename>template_thumbnail.png</filename>
+		<filename>favicon.ico</filename>
+		<filename>apple-touch-icon.png</filename>
+	</files>
+
+	<positions>
+		<position>header</position>
+		<position>left</position>
+		<position>right</position>
+		<position>precon</position>
+		<position>postcon</position>
+		<position>footer</position>
+	</positions>
+
+	<config>
+		<fields name="params">
+			<fieldset name="advanced">
+				<field name="columns" type="list" default="0"
+					label="Columns"
+					description="Select the column style"
+					filter="int"
+				>
+					<option value="0">One Column</option>
+					<option value="1">Two Columns - Left</option>
+					<option value="2">Two Columns - Right</option>
+					<option value="3">Three Columns</option>
+				</field>
+				<field name="pageclass" type="text"
+					label="Page Class"
+					description="Enter a page class"
+				/>
+			</fieldset>
+		</fields>
+	</config>
+</extension>
