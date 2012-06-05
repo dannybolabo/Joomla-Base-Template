@@ -8,7 +8,7 @@
 	$template_params = $app->getTemplate(true)->params;
 
 	$doc = &JFactory::getDocument();
-	$doc->setTitle($doc->getTitle().' | Website Name');
+	$doc->setTitle($doc->getTitle() . ' | ' . JFactory::getConfig()->getValue('config.sitename'));
 
 	$page_class = $app->getParams('com_content')->get('pageclass_sfx');
 	$template_class = $template_params->get('pageclass', '');
