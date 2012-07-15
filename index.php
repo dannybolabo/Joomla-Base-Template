@@ -29,8 +29,6 @@
     }
     $body_class = trim($page_class . ' ' . $layout . ' ' . $template_class);
 
-    $typekit_selector = 'h1';
-
 ?>
 <!doctype html>
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
@@ -47,22 +45,26 @@
         <script>window.jQuery || document.write('<script src="/templates/<?=$template_name?>/js/libs/jquery-1.7.1.min.js"><\/script>')</script>
         <script>jQuery.noConflict(); jQuery('html').addClass('js').removeClass('no-js');</script>
         <?php /* TypeKit
-        <script src="http://use.typekit.com/XXXXXXX.js"></script>
         <script>
-            jQuery(document).ready(function() {
-                jQuery('<?=$typekit_selector?>').css('visibility', 'hidden');
-                Typekit.load({
-                    active: function() {
-                        if (jQuery.support.opacity) {
-                            jQuery('<?=$typekit_selector?>').css('visibility', 'visible').hide().fadeIn(200);
-                        } else {
-                            jQuery('<?=$typekit_selector?>').css('visibility', 'visible');
-                        }
-                    }, inactive: function() {
-                        jQuery('<?=$typekit_selector?>').css('visibility', 'visible');
+            TypekitConfig = {
+                kitId: 'xxxxxx',
+                scriptTimeout: 2000
+            };
+            (function() {
+                jQuery('html').addClass('wf-loading');
+                var t = setTimeout(function() {
+                    jQuery('html').removeClass('wf-loading').addClass('wf-inactive');
+                }, TypekitConfig.scriptTimeout);
+                jQuery.ajax({
+                    url: '//use.typekit.com/' + TypekitConfig.kitId + '.js',
+                    dataType: 'script',
+                    cache: true,
+                    success: function() {
+                        clearTimeout(t);
+                        try { Typekit.load(TypekitConfig); } catch (e) {}
                     }
                 });
-            });
+            })();
         </script> */ ?>
         <jdoc:include type="head" />
         <?php /* Google Analytics
