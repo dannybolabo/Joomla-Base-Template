@@ -58,7 +58,21 @@ td { vertical-align: top; }
 .chromeframe { margin: 0.2em 0; background: #ccc; color: black; padding: 0.2em 0; }
 
 
-
+.typekit_font {
+    font-family: typekit-font, sans-serif;
+    -webkit-transition: opacity .15s linear;
+    -moz-transition: opacity .15s linear;
+    -o-transition: opacity .15s linear;
+    -ms-transition: opacity .15s linear;
+    transition: opacity .15s linear;
+}
+.wf-loading .typekit_font {
+    opacity: 0;
+}
+.wf-active .typekit_font,
+.wf-inactive .typekit_font {
+    opacity: 1;
+}
 
 
 .buttonheading {
